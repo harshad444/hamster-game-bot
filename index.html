@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hamster Game</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    button { font-size: 24px; padding: 15px 30px; }
+    #game { display: none; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Hamster Game</h1>
+  <button id="startBtn">Start Game</button>
+  <div id="game">
+    <p>Coins: <span id="coins">0</span></p>
+    <button onclick="earnCoin()">Earn Coin</button>
+  </div>
+  <script>
+    let coins = 0;
+    const startBtn = document.getElementById('startBtn');
+    const gameDiv = document.getElementById('game');
+    const coinsDisplay = document.getElementById('coins');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      gameDiv.style.display = 'block';
+    });
+
+    function earnCoin() {
+      coins++;
+      coinsDisplay.textContent = coins;
+    }
+  </script>
+</body>
+</html>
